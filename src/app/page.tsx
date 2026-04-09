@@ -14,16 +14,36 @@ export default function Home() {
           <code className="bg-zinc-200 dark:bg-zinc-800 px-1 rounded">NEXT_PUBLIC_TEST_ENV_VAR</code> を設定してください。
         </p>
 
+        <h2 className="text-lg font-semibold text-zinc-500 dark:text-zinc-400 mb-2">
+          ビルド時
+        </h2>
+        <div className="flex flex-col gap-4 mb-8">
+          <Link
+            href="/build-time"
+            className="block p-6 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 hover:border-blue-500 transition-colors"
+          >
+            <h3 className="text-xl font-semibold mb-1 text-black dark:text-white">
+              1. Static Generation (ビルド時)
+            </h3>
+            <p className="text-zinc-600 dark:text-zinc-400">
+              force-static ページで next build 時に process.env を読む
+            </p>
+          </Link>
+        </div>
+
+        <h2 className="text-lg font-semibold text-zinc-500 dark:text-zinc-400 mb-2">
+          ランタイム
+        </h2>
         <div className="flex flex-col gap-4">
           <Link
             href="/ssr"
             className="block p-6 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 hover:border-blue-500 transition-colors"
           >
-            <h2 className="text-xl font-semibold mb-1 text-black dark:text-white">
-              1. SSR (Server Component)
-            </h2>
+            <h3 className="text-xl font-semibold mb-1 text-black dark:text-white">
+              2. SSR (Server Component)
+            </h3>
             <p className="text-zinc-600 dark:text-zinc-400">
-              Server Component 内で process.env.TEST_ENV_VAR を読む
+              force-dynamic Server Component 内で process.env を読む
             </p>
           </Link>
 
@@ -31,11 +51,11 @@ export default function Home() {
             href="/server-action"
             className="block p-6 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 hover:border-blue-500 transition-colors"
           >
-            <h2 className="text-xl font-semibold mb-1 text-black dark:text-white">
-              2. Server Actions
-            </h2>
+            <h3 className="text-xl font-semibold mb-1 text-black dark:text-white">
+              3. Server Actions
+            </h3>
             <p className="text-zinc-600 dark:text-zinc-400">
-              Server Action 内で process.env.TEST_ENV_VAR を読む
+              Server Action 内で process.env を読む
             </p>
           </Link>
 
@@ -43,11 +63,11 @@ export default function Home() {
             href="/api/env"
             className="block p-6 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 hover:border-blue-500 transition-colors"
           >
-            <h2 className="text-xl font-semibold mb-1 text-black dark:text-white">
-              3. API Route
-            </h2>
+            <h3 className="text-xl font-semibold mb-1 text-black dark:text-white">
+              4. API Route
+            </h3>
             <p className="text-zinc-600 dark:text-zinc-400">
-              Route Handler 内で process.env.TEST_ENV_VAR を読む
+              Route Handler 内で process.env を読む
             </p>
           </Link>
         </div>
