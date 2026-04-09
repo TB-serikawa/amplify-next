@@ -20,6 +20,7 @@ function EnvRow({ label, value }: { label: string; value: string | undefined }) 
 export default function SSRPage() {
   const envValue = process.env.TEST_ENV_VAR;
   const publicEnvValue = process.env.NEXT_PUBLIC_TEST_ENV_VAR;
+  const noFileEnvValue = process.env.TEST_ENV_VAR_NO_FILE;
 
   return (
     <div className="min-h-screen bg-zinc-50 dark:bg-black p-8 font-sans">
@@ -34,6 +35,7 @@ export default function SSRPage() {
         <div className="p-6 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900">
           <EnvRow label="process.env.TEST_ENV_VAR" value={envValue} />
           <EnvRow label="process.env.NEXT_PUBLIC_TEST_ENV_VAR" value={publicEnvValue} />
+          <EnvRow label="process.env.TEST_ENV_VAR_NO_FILE (envに書き出さない)" value={noFileEnvValue} />
           <p className="text-xs text-zinc-400 mt-4">
             レンダリング時刻: {new Date().toISOString()}
           </p>

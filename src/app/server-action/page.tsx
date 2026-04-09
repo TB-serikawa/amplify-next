@@ -8,6 +8,7 @@ export default function ServerActionPage() {
   const [result, setResult] = useState<{
     value: string | null;
     publicValue: string | null;
+    noFileValue: string | null;
     timestamp: string;
   } | null>(null);
   const [loading, setLoading] = useState(false);
@@ -55,12 +56,24 @@ export default function ServerActionPage() {
                   )}
                 </p>
               </div>
-              <div className="py-3">
+              <div className="py-3 border-b border-zinc-100 dark:border-zinc-800">
                 <p className="text-sm text-zinc-500 mb-1">process.env.NEXT_PUBLIC_TEST_ENV_VAR:</p>
                 <p className="text-lg font-mono">
                   {result.publicValue ? (
                     <span className="text-green-600 dark:text-green-400">
                       &quot;{result.publicValue}&quot;
+                    </span>
+                  ) : (
+                    <span className="text-red-600 dark:text-red-400">undefined</span>
+                  )}
+                </p>
+              </div>
+              <div className="py-3">
+                <p className="text-sm text-zinc-500 mb-1">process.env.TEST_ENV_VAR_NO_FILE (envに書き出さない):</p>
+                <p className="text-lg font-mono">
+                  {result.noFileValue ? (
+                    <span className="text-green-600 dark:text-green-400">
+                      &quot;{result.noFileValue}&quot;
                     </span>
                   ) : (
                     <span className="text-red-600 dark:text-red-400">undefined</span>

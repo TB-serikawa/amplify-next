@@ -7,6 +7,7 @@ export default function CSRPage() {
   // TEST_ENV_VAR はビルド時にインライン化されないため undefined になるはず
   const envValue = process.env.TEST_ENV_VAR;
   const publicEnvValue = process.env.NEXT_PUBLIC_TEST_ENV_VAR;
+  const noFileEnvValue = process.env.TEST_ENV_VAR_NO_FILE;
 
   return (
     <div className="min-h-screen bg-zinc-50 dark:bg-black p-8 font-sans">
@@ -34,11 +35,21 @@ export default function CSRPage() {
               )}
             </p>
           </div>
-          <div className="py-3">
+          <div className="py-3 border-b border-zinc-100 dark:border-zinc-800">
             <p className="text-sm text-zinc-500 mb-1">process.env.NEXT_PUBLIC_TEST_ENV_VAR:</p>
             <p className="text-lg font-mono">
               {publicEnvValue ? (
                 <span className="text-green-600 dark:text-green-400">&quot;{publicEnvValue}&quot;</span>
+              ) : (
+                <span className="text-red-600 dark:text-red-400">undefined</span>
+              )}
+            </p>
+          </div>
+          <div className="py-3">
+            <p className="text-sm text-zinc-500 mb-1">process.env.TEST_ENV_VAR_NO_FILE (envに書き出さない):</p>
+            <p className="text-lg font-mono">
+              {noFileEnvValue ? (
+                <span className="text-green-600 dark:text-green-400">&quot;{noFileEnvValue}&quot;</span>
               ) : (
                 <span className="text-red-600 dark:text-red-400">undefined</span>
               )}
