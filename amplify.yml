@@ -1,0 +1,19 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - echo "TEST_ENV_VAR=$TEST_ENV_VAR" >> .env.production
+        - echo "NEXT_PUBLIC_TEST_ENV_VAR=$NEXT_PUBLIC_TEST_ENV_VAR" >> .env.production
+        - npm i
+    build:
+      commands:
+        - npm run build
+  artifacts:
+    baseDirectory: .next
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - .next/cache/**/*
+      - node_modules/**/*
