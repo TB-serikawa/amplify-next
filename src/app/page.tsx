@@ -32,7 +32,24 @@ export default function Home() {
         </div>
 
         <h2 className="text-lg font-semibold text-zinc-500 dark:text-zinc-400 mb-2">
-          ランタイム
+          クライアント
+        </h2>
+        <div className="flex flex-col gap-4 mb-8">
+          <Link
+            href="/csr"
+            className="block p-6 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 hover:border-blue-500 transition-colors"
+          >
+            <h3 className="text-xl font-semibold mb-1 text-black dark:text-white">
+              2. CSR (Client Component)
+            </h3>
+            <p className="text-zinc-600 dark:text-zinc-400">
+              &quot;use client&quot; コンポーネント内で process.env を読む（ブラウザ実行）
+            </p>
+          </Link>
+        </div>
+
+        <h2 className="text-lg font-semibold text-zinc-500 dark:text-zinc-400 mb-2">
+          サーバーランタイム
         </h2>
         <div className="flex flex-col gap-4">
           <Link
@@ -40,7 +57,7 @@ export default function Home() {
             className="block p-6 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 hover:border-blue-500 transition-colors"
           >
             <h3 className="text-xl font-semibold mb-1 text-black dark:text-white">
-              2. SSR (Server Component)
+              3. SSR (Server Component)
             </h3>
             <p className="text-zinc-600 dark:text-zinc-400">
               force-dynamic Server Component 内で process.env を読む
@@ -52,7 +69,7 @@ export default function Home() {
             className="block p-6 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 hover:border-blue-500 transition-colors"
           >
             <h3 className="text-xl font-semibold mb-1 text-black dark:text-white">
-              3. Server Actions
+              4. Server Actions
             </h3>
             <p className="text-zinc-600 dark:text-zinc-400">
               Server Action 内で process.env を読む
@@ -64,7 +81,7 @@ export default function Home() {
             className="block p-6 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 hover:border-blue-500 transition-colors"
           >
             <h3 className="text-xl font-semibold mb-1 text-black dark:text-white">
-              4. API Route
+              5. API Route
             </h3>
             <p className="text-zinc-600 dark:text-zinc-400">
               Route Handler 内で process.env を読む
