@@ -10,7 +10,8 @@ export default function Home() {
         <p className="text-zinc-600 dark:text-zinc-400 mb-8">
           Next.js on AWS Amplify で環境変数がどこで読めるかを検証します。
           <br />
-          Amplify コンソールで <code className="bg-zinc-200 dark:bg-zinc-800 px-1 rounded">TEST_ENV_VAR</code> を設定してください。
+          Amplify コンソールで <code className="bg-zinc-200 dark:bg-zinc-800 px-1 rounded">TEST_ENV_VAR</code> と{" "}
+          <code className="bg-zinc-200 dark:bg-zinc-800 px-1 rounded">NEXT_PUBLIC_TEST_ENV_VAR</code> を設定してください。
         </p>
 
         <div className="flex flex-col gap-4">

@@ -1,9 +1,9 @@
 "use server";
 
 export async function getEnvVar() {
-  const value = process.env.TEST_ENV_VAR;
   return {
-    value: value ?? null,
+    value: process.env.TEST_ENV_VAR ?? null,
+    publicValue: process.env.NEXT_PUBLIC_TEST_ENV_VAR ?? null,
     timestamp: new Date().toISOString(),
   };
 }
